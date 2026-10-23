@@ -1,74 +1,82 @@
+ 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NOVA AI | الذكاء الاصطناعي</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#090914;color:#f5f3ff}
-header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #29243d}
-.logo{font-size:25px;font-weight:bold;color:#b9a2ff}
-nav a{color:#ddd;text-decoration:none;margin:0 10px}
-.hero{text-align:center;padding:75px 20px 45px}
-.hero h1{font-size:clamp(36px,7vw,65px);margin:10px 0}
-.hero h1 span{color:#ad8cff}
-.hero p{color:#b9b5ca;line-height:1.9;max-width:620px;margin:20px auto}
-button{background:#8b5cf6;color:white;border:0;border-radius:12px;padding:13px 20px;font-size:16px;cursor:pointer}
-button:hover{background:#7544dc}
-.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding:25px 7% 65px}
-.card{background:#141326;border:1px solid #302748;border-radius:18px;padding:24px}
-.card h3{margin-top:8px}
-.card p{color:#b9b5ca;line-height:1.8}
-.icon{font-size:30px}
-.panel{max-width:850px;margin:0 auto 60px;padding:25px;background:#141326;border:1px solid #302748;border-radius:18px}
-textarea{width:100%;min-height:130px;background:#090914;color:white;border:1px solid #42365f;border-radius:12px;padding:14px;font-size:16px;margin:12px 0}
-#result{white-space:pre-wrap;line-height:1.9;margin-top:18px;color:#d8ccff}
-footer{text-align:center;padding:25px;color:#9993b3;border-top:1px solid #29243d}
-.small{font-size:13px;color:#aaa3c4}
-@media(max-width:500px){header{padding:18px}nav a{margin:0 4px;font-size:13px}.hero{padding-top:50px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOR AI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .logo {
+      color: #66e3ff;
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .card {
+      max-width: 600px;
+      margin: 35px auto;
+      padding: 25px;
+      background: #171f35;
+      border-radius: 20px;
+    }
+    input {
+      width: 90%;
+      padding: 14px;
+      margin: 12px 0;
+      border-radius: 10px;
+      border: 0;
+      font-size: 16px;
+    }
+    button {
+      padding: 13px 25px;
+      background: #66e3ff;
+      border: 0;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    footer {
+      color: #aab4cc;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="logo">✦ NOVA AI</div>
-  <nav><a href="#tools">الأدوات</a><a href="#assistant">جرّب الآن</a></nav>
-</header>
+  <div class="logo">MOR AI</div>
+  <h1>مرحباً بك في MOR</h1>
+  <p>مساحتك الجديدة للذكاء الاصطناعي</p>
 
-<section class="hero">
-  <div style="color:#b9a2ff">✦ مستقبل الذكاء الاصطناعي</div>
-  <h1>أطلق العنان لـ <span>أفكارك</span></h1>
-  <p>مرحباً بك في NOVA AI، مساحة ذكية تساعدك على تنظيم أفكارك وكتابة النصوص والترجمة والإبداع، بواجهة عربية بسيطة.</p>
-  <a href="#assistant"><button>ابدأ التجربة ←</button></a>
-</section>
+  <div class="card">
+    <h2>كيف يمكنني مساعدتك؟</h2>
+    <input id="question" type="text"
+      placeholder="اكتب سؤالك هنا...">
+    <br>
+    <button onclick="askMOR()">إرسال</button>
+    <p id="answer">أهلاً بك! اكتب سؤالك للبدء.</p>
+  </div>
 
-<section class="tools" id="tools">
-  <div class="card"><div class="icon">🤖</div><h3>المساعد الذكي</h3><p>اكتب سؤالك أو فكرتك وابدأ بتنظيمها.</p></div>
-  <div class="card"><div class="icon">✍️</div><h3>كتابة المحتوى</h3><p>حضّر مسودات للرسائل والمنشورات والأفكار.</p></div>
-  <div class="card"><div class="icon">🌍</div><h3>الترجمة</h3><p>ساعد نفسك في فهم النصوص وصياغتها بلغات أخرى.</p></div>
-  <div class="card"><div class="icon">💡</div><h3>توليد الأفكار</h3><p>ابدأ من فكرة صغيرة ووسّع خياراتك الإبداعية.</p></div>
-</section>
+  <footer>© 2026 MOR AI</footer>
 
-<section class="panel" id="assistant">
-  <h2>✦ جرّب NOVA AI</h2>
-  <p class="small">هذه نسخة تجريبية تعمل داخل المتصفح، وليست متصلة بعد بخدمة ذكاء اصطناعي حقيقية.</p>
-  <textarea id="prompt" placeholder="اكتب هنا سؤالك أو فكرتك..."></textarea>
-  <button onclick="runDemo()">جرّب الآن</button>
-  <div id="result"></div>
-</section>
-
-<footer>© 2026 NOVA AI — بداية فكرة كبيرة ✦</footer>
-
-<script>
-function runDemo(){
-  const text=document.getElementById('prompt').value.trim();
-  const result=document.getElementById('result');
-  if(!text){
-    result.textContent='اكتب سؤالك أو فكرتك أولاً.';
-    return;
-  }
-  result.textContent='تم استلام نصك بنجاح! هذه نسخة تجريبية من NOVA AI. لتمكين الإجابات الذكية الحقيقية، سنحتاج لاحقاً إلى ربط الموقع بخدمة ذكاء اصطناعي.';
-}
-</script>
+  <script>
+    function askMOR() {
+      const q = document.getElementById("question").value.trim();
+      const answer = document.getElementById("answer");
+      if (!q) {
+        answer.textContent = "اكتب سؤالك أولاً.";
+        return;
+      }
+      answer.textContent =
+        "شكراً على سؤالك! الاتصال بمحرك ذكاء اصطناعي يحتاج إلى إعداد إضافي.";
+    }
+  </script>
 </body>
 </html>
+
+
